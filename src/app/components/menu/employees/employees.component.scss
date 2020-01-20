@@ -1,0 +1,21 @@
+.content-body {
+  display: flex;
+  justify-content: space-between;
+  &-left {
+    width: 25%;
+    background-color: #1aa386;
+
+    &-search-employee {
+      width: 100%;
+
+      mat-form-field.example-form-field {
+        width: 100%;
+      }
+    }
+  }
+
+  &-right {
+    width: 72%;
+    background-color: darkgoldenrod;
+  }
+}

@@ -1,0 +1,43 @@
+<div class="application-container">
+  <div class="application-container-menu-left">
+    <div>
+      <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+        <mat-icon class="color-white">more_vert</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item (click)="firebaseService.SignOut()">
+          <mat-icon>exit_to_app</mat-icon>
+          <span>Вихід</span>
+        </button>
+      </mat-menu>
+    </div>
+  </div>
+
+  <div class="application-container-menu-right">
+    <div class="application-container-menu-right-logo"></div>
+
+    <nav>
+      <div><span>some text</span></div>
+      <ul>
+        <li routerLink="profile" class="color-grey" [ngClass]="{'active-menu': checkForChapter === 'profile'}"><mat-icon>home</mat-icon> <span>Profile</span></li>
+        <li routerLink="calendar" class="color-grey" [ngClass]="{'active-menu': checkForChapter === 'calendar'}"><mat-icon>calendar_today</mat-icon><span>Calendar</span></li>
+        <li routerLink="employees" class="color-grey" [ngClass]="{'active-menu': checkForChapter === 'employees'}"><mat-icon>accessibility</mat-icon> <span>Employees</span></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="application-container-content">
+      <router-outlet></router-outlet>
+  </div>
+
+</div>
+
+

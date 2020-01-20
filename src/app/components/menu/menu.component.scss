@@ -1,0 +1,100 @@
+.active-menu {
+  background: #e3f3f0;
+  color: #1aa386;
+}
+
+.application-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+
+  &-menu-left {
+    display: flex;
+    justify-content: center;
+    width: 5%;
+    height: 100vh;
+    background: #27a082;
+  }
+
+  &-menu-right {
+    border-right: 1px solid #e5e9ed;
+    padding: 15px 25px;
+    width: 20%;
+    height: 100vh;
+    background: #f9fafb;
+
+    &-logo {
+      width: 100%;
+      height: 100px;
+      background-image: url("src/assets/google_logo_2015.png");
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+      margin-bottom: 50px;
+    }
+
+    nav {
+      display: flex;
+      flex-flow: column;
+
+      div {
+        margin-bottom: 20px;
+        padding: 0 5px;
+      }
+
+      ul {
+        list-style: none;
+
+        li {
+          cursor: pointer;
+          outline: none;
+          padding: 10px 5px;
+          margin-bottom: 10px;
+          display: flex;
+          //justify-content: center;
+          align-items: center;
+
+          mat-icon {
+            margin-right: 15px;
+          }
+        }
+
+        li:hover {
+          background: #e3f3f0;
+          color: #1aa386;
+        }
+
+      }
+
+    }
+  }
+
+  &-content {
+    width: 75%;
+    height: 100vh;
+
+    &-header {
+      width: 100%;
+      padding: 5px 15px;
+      //height: 20px;
+      background: #f9fafb;
+      border-bottom: 1px solid #e5e9ed;
+
+      font-size: 22px;
+      font-weight: 500;
+      font-style: normal;
+      font-stretch: normal;
+      text-align: left;
+      color: #525355;
+      vertical-align: middle;
+      line-height: 40px;
+    }
+
+    &-body {
+      padding: 10px 10px 25px 25px;
+      width: 100%;
+      height: calc(100vh - 51px);
+
+    }
+  }
+}

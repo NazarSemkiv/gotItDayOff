@@ -1,0 +1,26 @@
+<div class="main-container">
+  <div class="main-container-logo"></div>
+  <form class="example-form" [formGroup]="signInForm">
+
+<!--    input for email-->
+    <mat-form-field class="example-full-width">
+      <input matInput placeholder="Email" formControlName="email">
+      <mat-error *ngIf="signInForm.get('email').invalid && signInForm.get('email').touched">
+        Будь ласка, введіть коректну пошту
+      </mat-error>
+    </mat-form-field>
+
+<!--    input for password-->
+    <mat-form-field class="example-full-width">
+      <input type="password" matInput placeholder="Password" formControlName="password">
+      <mat-error *ngIf="signInForm.get('password').invalid && signInForm.get('password').touched">
+        Будь ласка, введіть коректний пароль
+      </mat-error>
+    </mat-form-field>
+
+<!--    login button-->
+    <div class="example-button-row">
+      <button mat-raised-button [disabled]="signInForm.invalid" (click)="firebaseService.signIn(signInForm.get('email').value, signInForm.get('password').value)">Увійти</button>
+    </div>
+  </form>
+</div>
